@@ -1,10 +1,11 @@
-const employees = {
-    ...createEmployeesObject('engineering', ['Bob', 'Jane']),
-    ...createEmployeesObject('marketing', ['Sylvie'])
+export default function createIteratorObject(report) {
+  return {
+    * [Symbol.iterator]() {
+      for (const department of Object.values(report.allEmployees)) {
+        for (const employee of department) {
+          yield employee;
+        }
+      }
+    },
   };
-  
-  const report = createReportObject(employees);
-  const reportWithIterator = createIteratorObject(report);
-  
-  console.log(iterateThroughObject(reportWithIterator));
-  // Output: Bob | Jane | Sylvie
+}
