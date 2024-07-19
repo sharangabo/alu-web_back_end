@@ -33,4 +33,3 @@ export default class Pricing {
     return `${this.amount} ${this.currency.displayFullCurrency()}`;
   }
 }
-
