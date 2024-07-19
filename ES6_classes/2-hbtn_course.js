@@ -38,5 +38,3 @@ export default class HolbertonCourse {
     this._students = newStudents;
   }
 }
-
-  
