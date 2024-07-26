@@ -5,6 +5,6 @@ export default function hasValuesFromArray(set, values) {
       result = false;
     }
   }
-  
+
   return result;
 }
