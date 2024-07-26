@@ -8,10 +8,10 @@ redis.on('connect', () => console.log('Redis client connected to the server'));
 
 
 function publishMessage(message, time) {
-    setTimeout(() => {
-        console.log(`About to send ${message}`);
-        redis.publish('holberton school channel', message);
-    }, time);
+  setTimeout(() => {
+      console.log(`About to send ${message}`);
+      redis.publish('holberton school channel', message);
+  }, time);
 }
 
 publishMessage("Holberton Student #1 starts course", 100);

@@ -6,17 +6,17 @@ client.on('connect', () => console.log('Redis client connected to the server'));
 
 
 export function setNewSchool(schoolName, value) {
-    client.set(schoolName, value, (err, reply) => {
-        if (err) console.log(err);
-        print(`Reply: ${reply}`);
-    });
+  client.set(schoolName, value, (err, reply) => {
+      if (err) console.log(err);
+      print(`Reply: ${reply}`);
+  });
 }
 
 export function displaySchoolValue(schoolName) {
-    client.get(schoolName, (err, reply) => {
-        if (err) console.log(err);
-        print(reply);
-    });
+  client.get(schoolName, (err, reply) => {
+      if (err) console.log(err);
+      print(reply);
+  });
 }
 
 

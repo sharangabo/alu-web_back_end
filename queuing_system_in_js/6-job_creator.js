@@ -3,14 +3,14 @@ import { createClient } from "redis";
 
 
 const queue = createQueue({
-    redis: {
-        createClientFactory: () => createClient()
-    }
+  redis: {
+      createClientFactory: () => createClient()
+  }
 });
 
 const data = {
-    phoneNumber: '0173943892',
-    message: 'this is a message'
+  phoneNumber: '0173943892',
+  message: 'this is a message'
 };
 
 const job = queue.create('push_notification_code', data);
@@ -18,15 +18,15 @@ const job = queue.create('push_notification_code', data);
 
 
 job.on('enqueue', () => {
-    console.log(`Notification job created: ${job.id}`);
+  console.log(`Notification job created: ${job.id}`);
 });
 
 job.on('complete', () => {
-    console.log(`Notification job completed`);
+  console.log(`Notification job completed`);
 });
 
 job.on('ailed attempt', () => {
-    console.log('Notification job failed');
+  console.log('Notification job failed');
 });
 
 job.save()

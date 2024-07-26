@@ -7,15 +7,15 @@ client.on('connect', () => console.log('Redis client connected to the server'));
 
 
 export async function setNewSchool(schoolName, value) {
-    const setAsync = promisify(client.set).bind(client);
-    const reply = await setAsync(schoolName, value);
-    print(`Reply: ${reply}`);
+  const setAsync = promisify(client.set).bind(client);
+  const reply = await setAsync(schoolName, value);
+  print(`Reply: ${reply}`);
 }
 
 export async function displaySchoolValue(schoolName) {
-    const getAsync = promisify(client.get).bind(client);
-    const value = await getAsync(schoolName);
-    print(value);
+  const getAsync = promisify(client.get).bind(client);
+  const value = await getAsync(schoolName);
+  print(value);
 }
 
 
